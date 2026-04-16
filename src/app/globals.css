@@ -15,4 +15,7 @@
   .container {
     @apply lg:max-w-5xl;
   }
+  .text-warm-muted {
+    color: #c8c1ba;
+  }
 }

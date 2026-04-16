@@ -1,105 +1,88 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Image from "next/image";
-import CheckCircleIcon from "@/assets/icons/check-circle.svg";
-import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/grain.jpg";
-import SectionHeader from "@/components/SectionHeader";
+import cvaldavImage from "@/assets/images/cvaldav.png";
 import Card from "@/components/Card";
 
-const portfolioProjects = [
-  {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
-  },
-  {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
-    results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
-    ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
-  },
-  {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
-  },
+const techPill =
+  "inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-neutral-200";
+
+const frontendStack = ["React", "Next.js", "Tailwind CSS", "TypeScript"];
+const backendStack = ["Sanity", "Stripe", "Clerk"];
+
+const showcaseCards = [
+  { id: "1", title: "CValdav Store", link: "#" },
+  { id: "2", title: "CValdav Store", link: "#" },
+  { id: "3", title: "CValdav Store", link: "#" },
 ];
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24">
+    <section id="portfolio" className="pb-16 lg:py-24">
       <div className="container">
-        <SectionHeader
-          title=" Real-World Result"
-          eyebrow="Featured Project"
-          description=" See how I transform concepts eng digital experiences"
-        />
-
-        <div className="mt-10 md:mt-20 flex flex-col gap-20 ">
-          {portfolioProjects.map((project, projectIndex) => (
+        <div className="mt-10 flex flex-col gap-12 md:mt-16 md:gap-16 lg:mt-20 lg:gap-20">
+          {showcaseCards.map((project, projectIndex) => (
             <Card
-              key={project.title}
-              className=" px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky top-16"
+              key={project.id}
+              className="overflow-hidden p-8 md:p-10 lg:p-12"
               style={{
-                top: `calc(64px + ${projectIndex * 40}px`,
+                top: `calc(4rem + ${projectIndex * 40}px)`,
               }}
             >
-              <div className="lg:grid lg:grid-cols-2 lg:gap-16">
-                <div className="lg:pb-16">
-                  <div
-                    className="bg-gradient-to-r from-emerald-300 to-sky-400
-                inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text"
-                  >
-                    <span>{project.company}</span>
-                    <span>&bull;</span>
-                    <span>{project.year}</span>
-                  </div>
-                  <h3 className="font-serif text-2xl mt-2 md:mt-5 md:text-4xl">
+              <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+                <div className="flex flex-col">
+                  <h3 className="text-3xl font-bold tracking-tight text-[#8CB4E0] md:text-4xl">
                     {project.title}
                   </h3>
-                  <hr className="border-2 border-white/5 mt-4 md:mt-5" />
-                  <ul className="flex flex-col gap-4 mt-4 md:mt-5">
-                    {project.results.map((result) => (
-                      <li className="flex gap-2 text-sm md:text-base">
-                        <CheckCircleIcon className="size-5 md:size-6" />
-                        <span>{result.title}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a href={project.link}>
-                    <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
-                      <span>Visit Live site</span>
-                      <ArrowUpRightIcon className="size-4 " />
-                    </button>
+                  <p className="mt-2 text-lg text-neutral-300 md:text-xl">
+                    Platforma ecommerce completa
+                  </p>
+
+                  <div className="mt-8 md:mt-10">
+                    <p className="text-sm font-semibold text-white md:text-base">
+                      The Tech Stack:
+                    </p>
+                    <div className="mt-4 space-y-4">
+                      <div>
+                        <p className="mb-2 text-xs font-medium uppercase tracking-wide text-neutral-500">
+                          FrontEnd
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {frontendStack.map((label) => (
+                            <span key={label} className={techPill}>
+                              {label}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="mb-2 text-xs font-medium uppercase tracking-wide text-neutral-500">
+                          BackEnd
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {backendStack.map((label) => (
+                            <span key={label} className={techPill}>
+                              {label}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a
+                    href={project.link}
+                    className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-[#4a72b2] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#5a82c2] md:mt-10 md:w-auto md:self-start"
+                  >
+                    Vezi mai multe detalii →
                   </a>
                 </div>
-                <div className="">
+
+                <div className="relative flex min-h-[260px] items-center justify-center lg:min-h-[380px]">
                   <Image
-                    src={project.image}
-                    alt={project.title}
-                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                    src={cvaldavImage}
+                    alt="Previzualizare CValdav Store — laptop cu magazinul online"
+                    className="h-auto w-full max-w-5xl object-contain drop-shadow-2xl lg:max-w-none"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority={projectIndex === 0}
                   />
                 </div>
               </div>
