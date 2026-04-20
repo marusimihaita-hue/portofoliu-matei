@@ -1,19 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, Calistoga } from "next/font/google";
+import { DM_Sans, Syne } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const calistoga = Calistoga({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-serif",
-  weight: ["400"],
+  variable: "--font-sans",
+  weight: ["300", "400", "500"],
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Created with the help of Frontend Tribe",
+  title: "Marusi Matei Bruno — Full-Stack Developer",
+  description:
+    "Portofoliu — produse web, Next.js, React și stack modern full-stack.",
 };
 
 export default function RootLayout({
@@ -22,12 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", inter.variable)}>
+    <html lang="ro" className={cn("scroll-smooth font-sans", dmSans.variable)}>
       <body
         className={twMerge(
-          inter.variable,
-          calistoga.variable,
-          "bg-black text-white antialiased font-sans",
+          dmSans.variable,
+          syne.variable,
+          "bg-[var(--bg-dark)] text-white antialiased font-sans",
         )}
       >
         {children}

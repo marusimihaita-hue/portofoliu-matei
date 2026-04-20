@@ -16,6 +16,13 @@
     --font-sans: var(--font-sans);
   }
   :root {
+    --blue: #4a90e2;
+    --blue-dim: rgba(74, 144, 226, 0.18);
+    --bg-dark: #0a0a0c;
+    --bg-section: #0e0e11;
+    --card-bg: rgba(255, 255, 255, 0.04);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --muted-ui: rgba(255, 255, 255, 0.45);
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
@@ -86,7 +93,7 @@
     border-color: var(--border);
   }
   body {
-    background-color: var(--background);
+    background-color: var(--bg-dark);
     color: var(--foreground);
   }
   html {
@@ -99,6 +106,10 @@
     @apply lg:max-w-5xl;
   }
   .text-warm-muted {
-    color: #c8c1ba;
+    color: var(--muted-ui);
+  }
+
+  .text-off-white {
+    color: #e8e8e8;
   }
 }

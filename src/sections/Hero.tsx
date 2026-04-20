@@ -1,62 +1,91 @@
 import Image from "next/image";
+import Link from "next/link";
 import avatar from "@/assets/images/avatar.png";
 import heroBg from "@/assets/images/hero-bg.jpg";
 import textHeroBg from "@/assets/images/text-hero-bg.png";
+import { ArrowRight } from "lucide-react";
+
+const heroSideFadeMask =
+  "linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%)";
+
+const maskLayerStyle = {
+  maskImage: heroSideFadeMask,
+  WebkitMaskImage: heroSideFadeMask,
+  maskSize: "100% 100%",
+  WebkitMaskSize: "100% 100%",
+  maskRepeat: "no-repeat",
+  WebkitMaskRepeat: "no-repeat",
+} as const;
 
 export const HeroSection = () => {
   return (
-    <section className="relative z-0 overflow-x-clip bg-black text-white">
-      <div
-        className="relative flex min-h-[60vh] flex-col items-center justify-end bg-black pt-24"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.50)), url(${heroBg.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center bottom",
-        }}
-      >
-        <div className="relative flex flex-col items-center translate-y-5">
-          <Image
-            src={avatar}
-            alt="Marusi Matei Bruno"
-            width={200}
-            height={200}
-            priority
-            className="size-40 rounded-full"
-          />
-          <div className="pointer-events-none absolute bottom-1 left-1/2  text-white/85"></div>
-        </div>
-      </div>
-
-      <div
-        className="relative flex min-h-[52vh] flex-col items-center justify-between bg-black px-4 pb-10 pt-12 md:min-h-[40vh] md:pt-16"
-        style={{
-          backgroundImage: `url(${textHeroBg.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
-        }}
-      >
+    <section
+      id="hero"
+      className="relative z-0 flex min-h-[min(100dvh,85rem)] flex-col overflow-x-clip bg-[var(--bg-dark)] text-white"
+    >
+      <div className="relative flex min-h-[min(36dvh,28rem)] max-h-[min(72dvh,70rem)] flex-1 flex-col items-center justify-end overflow-hidden bg-[var(--bg-dark)] pt-24">
         <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-56"
+          className="pointer-events-none absolute inset-0 bg-[var(--bg-dark)] bg-no-repeat"
+          style={{
+            backgroundImage: `url(${heroBg.src})`,
+            backgroundSize: "contain",
+            backgroundPosition: "center bottom",
+            ...maskLayerStyle,
+          }}
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-black/50"
+          style={maskLayerStyle}
           aria-hidden
         />
 
-        <div className="relative z-10 flex max-w-xl flex-col items-center gap-3 text-center">
-          <h1 className="text-4xl font-bold tracking-wider text-warm-muted  ">
+        <div className="relative z-10 flex flex-col items-center translate-y-5">
+          <Image
+            src={avatar}
+            alt="Marusi Matei Bruno"
+            width={300}
+            height={300}
+            priority
+            className="size-40 rounded-full ring-2 ring-brand/40"
+          />
+        </div>
+      </div>
+
+      <div className="relative flex shrink-0 flex-col items-center gap-8 overflow-hidden bg-[var(--bg-dark)] px-4 pb-16 pt-10 md:gap-10 md:pb-20 md:pt-12">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-[clamp(16rem, 38dvh, 30rem)] max-w-none bg-top bg-no-repeat"
+          style={{
+            backgroundImage: `url(${textHeroBg.src})`,
+            backgroundSize:
+              "auto clamp(240px, min(40dvh, calc(82vw * 0.48)), 36rem)",
+            ...maskLayerStyle,
+          }}
+          aria-hidden
+        />
+
+        <div className="relative z-10 flex max-w-xl flex-col items-center gap-4 text-center">
+          <span className="mb-1 inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand-dim px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-brand">
+            <span
+              className="size-1.5 rounded-full bg-brand shadow-[0_0_6px_var(--blue)]"
+              aria-hidden
+            />
+            Open for hire
+          </span>
+          <h1 className="font-display text-5xl  font-extrabold leading-[1.05] tracking-[-0.02em] text-white">
             Marusi Matei Bruno
           </h1>
-          <p className="text-2xl text-warm-muted  tracking-wide">
-            Junior Full-Stack Developer.
-          </p>
-          <p className=" text-sm leading-relaxed text-warm-muted ">
+          <p className="max-w-[420px] text-[1.1rem] font-light italic text-white/45">
             I craft digital products for those who expect more than average.
           </p>
         </div>
 
         <a
-          href="#portfolio"
-          className="relative z-10 mt-10 flex flex-col items-center gap-1 font-mono text-xs text-white/70 transition hover:text-white md:text-sm"
+          href="#projects"
+          className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-[11px] uppercase tracking-[0.15em] text-white/45"
         >
-          <span>view my portfolio</span>
+          <span className="h-10 w-px bg-gradient-to-b from-brand/60 to-transparent" />
+          scroll
         </a>
       </div>
     </section>

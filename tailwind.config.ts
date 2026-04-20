@@ -22,6 +22,12 @@ const config: Config = {
     },
     extend: {
       colors: {
+        brand: {
+          DEFAULT: "#4A90E2",
+          dim: "rgba(74, 144, 226, 0.18)",
+          glow: "rgba(74, 144, 226, 0.45)",
+          pill: "#8bbef5",
+        },
         background: "var(--background)",
         foreground: "var(--foreground)",
         card: {
@@ -54,8 +60,8 @@ const config: Config = {
         ring: "var(--ring)",
       },
       fontFamily: {
-        sans: ["var(--font-sans)"],
-        serif: ["var(--font-serif)"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
       },
       animation: {
         "ping-large": "ping-large 1.5s ease-in-out infinite",

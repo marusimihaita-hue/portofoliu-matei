@@ -1,3 +1,5 @@
+import { About } from "@/sections/About";
+import { Contact } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
 import { HeroSection } from "@/sections/Hero";
@@ -9,6 +11,8 @@ const Home = () => {
       <Header />
       <HeroSection />
       <ProjectsSection />
+      <About />
+      <Contact />
       <Footer />
     </div>
   );
