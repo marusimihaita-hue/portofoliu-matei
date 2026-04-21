@@ -77,9 +77,9 @@ export const About = () => {
 
                         <p className="text-[15px] font-light leading-[1.8] text-white/70">
                             I enjoy turning ideas into real, functional
-                            applications. I'm pretty detail-oriented, maybe even
+                            applications. I&apos;m pretty detail-oriented, maybe even
                             a little perfectionist, so I like things to feel
-                            right, clean, and consistent. I'm also not the type
+                            right, clean, and consistent. I&apos;m also not the type
                             to leave things unfinished. If I work on something,
                             I want it to be done right and feel complete.
                         </p>
