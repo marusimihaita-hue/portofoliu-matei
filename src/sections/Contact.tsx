@@ -26,12 +26,9 @@ export const Contact = () => {
                             full-time.
                         </p>
                         <div className="mt-2 flex flex-wrap gap-3">
-                            <a
-                                href="mailto:marusimihaia@gmail.com"
-                                className="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-display text-[13px] font-semibold text-white transition hover:-translate-y-px hover:bg-[#5aa0f0]"
-                            >
+                            <button className="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-display text-[13px] font-semibold text-white transition hover:-translate-y-px hover:bg-[#5aa0f0] cursor-default">
                                 Trimite un email
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </Reveal>
@@ -41,10 +38,7 @@ export const Contact = () => {
                         <h3 className="font-display text-base font-semibold text-white">
                             Contact direct
                         </h3>
-                        <a
-                            href="mailto:marusimihaia@gmail.com"
-                            className="flex items-center gap-2.5 text-sm text-white/60 transition-colors hover:text-white"
-                        >
+                        <button className="flex items-center gap-2.5 text-sm text-white/60 transition-colors hover:text-white cursor-default">
                             <span
                                 className="flex size-7 shrink-0 items-center justify-center rounded-md border border-brand/20 bg-brand-dim text-[13px]"
                                 aria-hidden
@@ -54,7 +48,7 @@ export const Contact = () => {
                             <span className="break-all">
                                 marusimihaia@gmail.com
                             </span>
-                        </a>
+                        </button>
                         <div className="flex items-center gap-2.5 text-sm text-white/60">
                             <span
                                 className="flex size-7 shrink-0 items-center justify-center rounded-md border border-brand/20 bg-brand-dim text-[13px]"
@@ -62,12 +56,9 @@ export const Contact = () => {
                             >
                                 📱
                             </span>
-                            <a
-                                href="tel:+40771170885"
-                                className="transition-colors hover:text-white"
-                            >
+                            <button className="transition-colors hover:text-white cursor-default">
                                 0771170885
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </Reveal>
