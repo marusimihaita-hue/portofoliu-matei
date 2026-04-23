@@ -1,30 +1,20 @@
 import { FadeInOnView } from "@/components/FadeInOnView";
 import { About } from "@/sections/About";
 import { Contact } from "@/sections/Contact";
-import { Footer } from "@/sections/Footer";
-import { Header } from "@/sections/Header";
 import { HeroSection } from "@/sections/Hero";
 import { ProjectsSection } from "@/sections/Projects";
+import { SectionsBackground } from "@/components/SectionsBackground";
 
 const Home = () => {
     return (
         <>
-            <Header />
-            <FadeInOnView>
-                <HeroSection />
-            </FadeInOnView>
-            <FadeInOnView>
+            <HeroSection />
+
+            <SectionsBackground>
                 <ProjectsSection />
-            </FadeInOnView>
-            <FadeInOnView>
                 <About />
-            </FadeInOnView>
-            <FadeInOnView>
                 <Contact />
-            </FadeInOnView>
-            <FadeInOnView>
-                <Footer />
-            </FadeInOnView>
+            </SectionsBackground>
         </>
     );
 };

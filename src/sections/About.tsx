@@ -1,9 +1,9 @@
 import Image from "next/image";
 import aboutFoto from "@/assets/images/about-foto.jpg";
-import { Reveal } from "@/components/Reveal";
 import { RiNextjsFill, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { SiFirebase, SiSanity, SiTypescript } from "react-icons/si";
 import { IconType } from "react-icons";
+import { FadeInOnView } from "@/components/FadeInOnView";
 
 const chipBase =
     "inline-flex items-center gap-1.5 rounded-lg border border-white/[0.09] bg-white/[0.04] px-3 py-1.5 text-[13px] text-off-white transition hover:border-[rgba(74,144,226,0.4)] hover:bg-brand-dim hover:text-brand-pill";
@@ -39,11 +39,11 @@ export const About = () => {
     return (
         <section
             id="about"
-            className="scroll-mt-28 bg-[var(--bg-dark)] px-8 py-24 md:px-8"
+            className="scroll-mt-28 bg-transparent px-8 pb-24 pt-12 md:px-8"
             aria-labelledby="about-heading"
         >
             <div className="mx-auto grid max-w-[1200px] items-start gap-16 md:grid-cols-2">
-                <Reveal>
+                <FadeInOnView>
                     <div className="relative aspect-[4/4] overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[#111118]">
                         <Image
                             src={aboutFoto}
@@ -59,14 +59,11 @@ export const About = () => {
                             </span>
                         </div>
                     </div>
-                </Reveal>
+                </FadeInOnView>
 
-                <Reveal delayMs={150}>
+                <FadeInOnView>
                     <div className="flex flex-col gap-6">
                         <div>
-                            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-brand">
-                                Despre mine
-                            </p>
                             <h2
                                 id="about-heading"
                                 className="mt-3 font-display text-[clamp(1.9rem,4vw,2.8rem)] font-bold leading-[1.1] tracking-tight text-white"
@@ -77,11 +74,12 @@ export const About = () => {
 
                         <p className="text-[15px] font-light leading-[1.8] text-white/70">
                             I enjoy turning ideas into real, functional
-                            applications. I&apos;m pretty detail-oriented, maybe even
-                            a little perfectionist, so I like things to feel
-                            right, clean, and consistent. I&apos;m also not the type
-                            to leave things unfinished. If I work on something,
-                            I want it to be done right and feel complete.
+                            applications. I&apos;m pretty detail-oriented, maybe
+                            even a little perfectionist, so I like things to
+                            feel right, clean, and consistent. I&apos;m also not
+                            the type to leave things unfinished. If I work on
+                            something, I want it to be done right and feel
+                            complete.
                         </p>
 
                         <div className="space-y-3">
@@ -98,7 +96,7 @@ export const About = () => {
                             <StackChips items={backendStack} />
                         </div>
                     </div>
-                </Reveal>
+                </FadeInOnView>
             </div>
         </section>
     );

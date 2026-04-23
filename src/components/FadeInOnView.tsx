@@ -1,34 +1,10 @@
 "use client";
 
-import {
-    useEffect,
-    useLayoutEffect,
-    useRef,
-    useState,
-    type ReactNode,
-} from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
-function intersectsViewport(el: HTMLElement) {
-    const r = el.getBoundingClientRect();
-    const vh = window.innerHeight;
-    const vw = window.innerWidth;
-    return r.top < vh && r.bottom > 0 && r.left < vw && r.right > 0;
-}
-
-/**
- * Fade când blocul intră în viewport; se repetă la fiecare intrare (ex. scroll în sus).
- * useLayoutEffect pe mount aliniază starea vizibilă înainte de paint → la refresh cu multe
- * secțiuni în ecran (zoom out), tranzițiile pornesc sincron.
- */
 export function FadeInOnView({ children }: { children: ReactNode }) {
     const ref = useRef<HTMLDivElement>(null);
     const [visible, setVisible] = useState(false);
-
-    useLayoutEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-        if (intersectsViewport(el)) setVisible(true);
-    }, []);
 
     useEffect(() => {
         const el = ref.current;
@@ -48,8 +24,10 @@ export function FadeInOnView({ children }: { children: ReactNode }) {
     return (
         <div
             ref={ref}
-            className={`transition-opacity duration-700 ease-out ${
-                visible ? "opacity-100" : "opacity-0"
+            className={`transition-[opacity,transform,filter] duration-[1200ms] ease-out motion-reduce:transition-none motion-reduce:duration-0 motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:blur-none ${
+                visible
+                    ? "translate-y-0 opacity-100 blur-none"
+                    : "translate-y-8 opacity-0 blur-md"
             }`}
         >
             {children}
