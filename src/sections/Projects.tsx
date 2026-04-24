@@ -53,14 +53,14 @@ function ProjectSlide({ project, index }: { project: Project; index: number }) {
             <div className="grid w-full items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">
                 <div className="flex min-w-0 flex-col">
                     <p className="font-display text-[11px] font-semibold uppercase tracking-[0.2em] text-brand">
-                        Proiect {n}
+                        Project {n}
                     </p>
 
                     <h3 className="mt-3 font-display text-[1.9rem] font-bold leading-tight tracking-tight text-white">
                         {project.title}
                     </h3>
                     <p className="mt-4 max-w-xl text-sm font-light leading-relaxed text-white/45 md:text-[15px]">
-                        {project.description}
+                        {project.subtitle}
                     </p>
 
                     <div className="mt-8 space-y-5">
@@ -72,11 +72,11 @@ function ProjectSlide({ project, index }: { project: Project; index: number }) {
                         href={`/projects/${project.id}`}
                         className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand px-5 py-2.5 font-display text-[13px] font-semibold text-white transition hover:bg-[#5aa0f0] hover:-translate-y-px md:mt-9 md:w-auto md:self-start"
                     >
-                        Mai multe detalii
+                        More details
                         <ArrowRight className="size-3.5" aria-hidden />
                     </Link>
                 </div>
-                <div className="relative mx-auto aspect-[1/1] w-full max-w-xl overflow-hidden rounded-[10px] border border-white/[0.07] bg-white/[0.03] lg:mx-0 lg:max-w-none">
+                <div className="relative mx-auto aspect-[1/1] w-full max-w-xl overflow-hidden rounded-[10px] border border-white/[0.07] bg-white/[0.02] lg:mx-0 lg:max-w-none">
                     <span
                         className="pointer-events-none absolute -right-1 top-0 select-none font-display text-[clamp(4rem,14vw,10rem)] font-bold leading-none text-blue-300/20"
                         aria-hidden
@@ -128,7 +128,7 @@ export const ProjectsSection = () => {
             id="projects"
             className="scroll-mt-28 bg-transparent px-8 pb-20 pt-12 md:px-8 md:pb-24 md:pt-16"
         >
-            <div className="mx-auto w-full max-w-[1200px]">
+            <div className="mx-auto w-full max-w-7xl">
                 <Carousel
                     opts={{ align: "start", loop: true }}
                     setApi={setApi}
@@ -139,11 +139,11 @@ export const ProjectsSection = () => {
                             <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
                                 <div className="min-w-0 space-y-4">
                                     <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-brand">
-                                        Proiecte selectate
+                                        Selected Projects
                                     </p>
                                     <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:block lg:space-y-4">
                                         <h2 className="font-display text-[clamp(1.9rem,4vw,2.8rem)] font-bold leading-tight tracking-tight text-white">
-                                            Ce am construit
+                                            What I built
                                         </h2>
                                         <div className="flex items-center justify-between gap-4 sm:justify-start lg:hidden">
                                             <span className="text-sm tabular-nums text-white/45">
@@ -163,9 +163,6 @@ export const ProjectsSection = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="hidden text-sm tabular-nums text-white/45 lg:block">
-                                        {current + 1}/{count}
-                                    </p>
                                 </div>
 
                                 <div className="hidden shrink-0 gap-2 lg:flex">

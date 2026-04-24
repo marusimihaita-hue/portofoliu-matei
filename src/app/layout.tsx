@@ -42,8 +42,6 @@ export default function RootLayout({
                     "bg-[var(--bg-dark)] text-white antialiased font-sans",
                 )}
             >
-                <Header />
-
                 <main>{children}</main>
                 <FadeInOnView>
                     <Footer />

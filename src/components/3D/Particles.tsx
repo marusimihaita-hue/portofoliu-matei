@@ -15,7 +15,7 @@ const Particles = ({ count }: { count: number }) => {
                     Math.random() - 10 - 2,
                     (Math.random() - 0.5) * 10,
                 ],
-                speed: 0.005 + Math.random() * 0.001,
+                speed: 0.003 + Math.random() * 0.001,
             });
         }
         return temp;
@@ -51,9 +51,9 @@ const Particles = ({ count }: { count: number }) => {
             </bufferGeometry>
             <pointsMaterial
                 map={texture}
-                size={0.1}
+                size={0.05}
                 transparent
-                opacity={0.3}
+                opacity={0.4}
                 sizeAttenuation
                 depthWrite={false}
                 alphaTest={0.01}

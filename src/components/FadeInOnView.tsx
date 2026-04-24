@@ -24,7 +24,7 @@ export function FadeInOnView({ children }: { children: ReactNode }) {
     return (
         <div
             ref={ref}
-            className={`transition-[opacity,transform,filter] duration-[1200ms] ease-out motion-reduce:transition-none motion-reduce:duration-0 motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:blur-none ${
+            className={`transition-[opacity,transform,filter] duration-[800ms] ease-out motion-reduce:transition-none motion-reduce:duration-0 motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:blur-none ${
                 visible
                     ? "translate-y-0 opacity-100 blur-none"
                     : "translate-y-8 opacity-0 blur-md"

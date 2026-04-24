@@ -17,7 +17,7 @@ const StarFall = ({ children }: { children: ReactNode }) => {
                     zIndex: 0,
                 }}
             >
-                <Particles count={300} />
+                <Particles count={400} />
             </Canvas>
         </div>
     );

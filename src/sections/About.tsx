@@ -39,12 +39,12 @@ export const About = () => {
     return (
         <section
             id="about"
-            className="scroll-mt-28 bg-transparent px-8 pb-24 pt-12 md:px-8"
+            className="scroll-mt-28 bg-transparent px-8 pb-24 pt-16 md:px-8"
             aria-labelledby="about-heading"
         >
-            <div className="mx-auto grid max-w-[1200px] items-start gap-16 md:grid-cols-2">
+            <div className="mx-auto grid max-w-7xl items-start gap-16 md:grid-cols-2">
                 <FadeInOnView>
-                    <div className="relative aspect-[4/4] overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[#111118]">
+                    <div className="relative aspect-[4/4] overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[#111118] shadow-none transition-colors duration-300 hover:border-[rgba(74,144,226,0.25)]">
                         <Image
                             src={aboutFoto}
                             alt="Marusi Matei — fotografie About"
@@ -66,9 +66,10 @@ export const About = () => {
                         <div>
                             <h2
                                 id="about-heading"
-                                className="mt-3 font-display text-[clamp(1.9rem,4vw,2.8rem)] font-bold leading-[1.1] tracking-tight text-white"
+                                className="mt-3 font-display text-[clamp(1.9rem,4vw,2.8rem)] font-bold leading-[1.1] tracking-wider text-white"
                             >
-                                Absolvent CS, pasionat de Web Development
+                                Focused on building modern, scalable web
+                                applications
                             </h2>
                         </div>
 
@@ -82,16 +83,20 @@ export const About = () => {
                             complete.
                         </p>
 
+                        <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-white/70">
+                            The stack I prefer, modern & fast.
+                        </p>
+
                         <div className="space-y-3">
                             <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/30">
-                                Stack-ul pe care îl prefer
+                                FrontEnd
                             </p>
                             <StackChips items={frontendStack} />
                         </div>
 
                         <div className="space-y-3">
                             <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/30">
-                                Backend
+                                BackEnd
                             </p>
                             <StackChips items={backendStack} />
                         </div>
