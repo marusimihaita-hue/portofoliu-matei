@@ -16,13 +16,13 @@ export const Contact = () => {
                 <FadeInOnView>
                     <div className="flex flex-col gap-4 rounded-2xl border border-brand/20 bg-gradient-to-br from-brand/[0.12] to-brand/[0.04] p-10">
                         <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-brand">
-                            Let's collaborate
+                            Let&apos;s collaborate
                         </p>
                         <h2
                             id="contact-heading"
                             className="font-display text-[1.8rem] font-bold leading-[1.15] tracking-tight text-white"
                         >
-                            Let's build
+                            Let&apos;s build
                             <br />
                             something epic.
                         </h2>
