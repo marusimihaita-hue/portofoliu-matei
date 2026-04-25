@@ -1,14 +1,9 @@
 import type { StaticImageData } from "next/image";
 import type { IconType } from "react-icons";
 import cvaldavImage from "@/assets/images/cvaldav.png";
+import myPortofolioImage from "@/assets/images/myPortofolio.png";
 import { RiNextjsFill, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
-import {
-    SiClerk,
-    SiMongodb,
-    SiNodedotjs,
-    SiSanity,
-    SiTypescript,
-} from "react-icons/si";
+import { SiClerk, SiSanity, SiTypescript } from "react-icons/si";
 import { FaStripe } from "react-icons/fa";
 
 export type StackItem = { label: string; Icon: IconType; highlight?: boolean };
@@ -30,17 +25,21 @@ export const projects: Project[] = [
     {
         id: "cvaldav",
         title: "CValdav Store",
-        githubUrl: "https://github.com/marusimihaita-hue/cvaldav-store",
-        liveDemo: "https://cvaldav-store.vercel.app",
+        githubUrl: "https://github.com/marusimihaita-hue?tab=repositories",
+        liveDemo: "https://ecommerce-starter-two.vercel.app/",
         subtitle:
-            "Platformă ecommerce completă — de la catalog de produse la checkout cu plăți integrate Stripe.",
-        description: `CValdav Store a început ca o idee simplă: un loc unde produsele să poată fi prezentate curat, fără zgomot vizual, fără distrageri. Am vrut să construiesc ceva care să funcționeze end-to-end — de la prima pagină până la confirmarea plății — fără să depind de soluții externe gata făcute care să ascundă complexitatea.
+            "Full ecommerce platform — from product catalog to checkout with integrated Stripe payments.",
+        description: `I built an e-commerce demo platform with editable content, test payments, and order history. Data changes without redeploying, different users have different permissions, and payments are in test mode (Stripe, no real money). The flow is: catalog - product details - cart - authentication - checkout - confirmation - orders.
 
-Procesul de construire a durat aproximativ șase săptămâni, lucrate în paralel cu alte proiecte. Cel mai dificil moment a fost integrarea Stripe împreună cu Clerk — cele două sisteme trebuie să comunice precis pentru ca o comandă să fie înregistrată corect în Sanity după finalizarea checkout-ului. Am rezolvat asta prin webhook-uri server-side care ascultă evenimentele Stripe și scriu automat în baza de date.
+I split the app into routes using Next.js 16 (App Router): one for shopping, another for admin. This keeps layouts and permissions separate between client and operator. Content (products, images, text) comes from Sanity, using next-sanity with typed queries. The UI uses what I change in the studio, not hardcoded values. The studio is available on a separate route.
 
-Catalogul de produse e gestionat complet din Sanity Studio — un CMS headless care îmi permite să modific conținutul fără să ating codul. Schema e construită în așa fel încât să suporte categorii, variante de produs și imagini multiple per articol. Totul e tipizat cu TypeScript, ceea ce a eliminat o categorie întreagă de bug-uri pe care le-aș fi prins altfel doar în producție.
+For the frontend: Tailwind 4 and a shadcn-style component system (central config, Radix, CVA, clsx, tailwind-merge). I used Embla for the carousel, next-themes for theming, Sonner for notifications. Fonts are from next/font (DM Sans, Cormorant Garamond, Geist Mono) with CSS variables.
 
-Platforma e în modul demo în momentul de față — poți naviga, adăuga produse în coș și simula un checkout, dar plățile reale sunt dezactivate. Dacă vrei să o testezi complet, folosește cardul de test Stripe: 4242 4242 4242 4242, orice dată în viitor și orice CVC.`,
+Behavior: cart is managed with Zustand (careful with SSR and hydration). Authentication with Clerk (provider in layout, protected routes). Payments with Stripe Checkout and Server Actions, and a webhook saves the order in Sanity.
+
+Code quality: I used Biome (lint and formatting) and enabled React Compiler in Next.
+
+The project connects CMS, authentication, cart, payment, and server APIs. The flow is clear: catalog - cart - checkout - orders.`,
         frontend: [
             { label: "Next.js", Icon: RiNextjsFill, highlight: true },
             { label: "React", Icon: RiReactjsLine, highlight: true },
@@ -58,25 +57,27 @@ Platforma e în modul demo în momentul de față — poți naviga, adăuga prod
     },
     {
         id: "second",
-        title: "Harbor Ping",
-        githubUrl: "https://github.com/marusimihaita-hue/harbor-ping",
-        liveDemo: "https://harbor-ping.vercel.app",
+        title: "Matei.work",
+        githubUrl: "https://github.com/marusimihaita-hue/portofoliu-matei",
+        liveDemo: "https://marusi-portfolio.vercel.app/",
         subtitle:
-            "Dashboard minimal de health-check pentru URL-uri și endpoint-uri pe care le urmărești din colțul ochiului.",
-        description: `Harbor Ping e un mic dashboard de health-check pentru URL-uri pe care le urmăresc ocazional: job-uri cron, webhooks vechi, staging-uri uitate. Am vrut ceva fără SaaS — doar o listă, un istoric de status codes și notificări discrete când ceva cade sub 200 prea mult timp.
-
-L-am scos din sertar într-un weekend ploios: polling simplu de pe server, stocare minimală și o pagină care îmi arată ultima eroare în plain text, fără grafice inutile. Încă îl folosesc când vreau să verific rapid dacă „mai respiră” un serviciu, fără să deschid trei tab-uri de monitoring comercial.`,
+            "Personal portfolio — modern design, intuitive navigation, and projects presented clearly",
+        description: `I created it to showcase my work and to explain, project by project, how I approached each solution and which technologies I used.
+The website is built from scratch, without using a predefined template. I chose and implemented the application structure myself (App Router from Next.js), the section organization, centralized data management for projects, and the dynamic generation of individual project pages. I used Next.js 15 together with React 18 and TypeScript, integrated with Tailwind CSS (and PostCSS), while fonts are handled using next/font (DM Sans and Syne).
+For image optimization, I used Next Image, and style consistency is maintained with the help of clsx, tailwind-merge, and class-variance-authority, especially in reusable components such as carousel buttons.
+On the interface side, I started from the shadcn model (configured via components.json), using components from components/ui, such as Embla for the carousel and various UI elements. For icons, I integrated Lucide, and in the stack section I also used react-icons, connected with the data from data.ts.
+Animations are implemented using Framer Motion and the motion package (for backgrounds and UI effects), while additional visual effects are handled with tsParticles ("slim" version) in the section backgrounds. In the hero area, I integrated a canvas built with React Three Fiber and Three.js to create a starfield effect. I also added scroll-based animations using IntersectionObserver and CSS transitions (fade-in effects when elements enter the viewport), keeping everything as simple and efficient as possible.
+This portfolio is where I brought all these elements together, with a focus on design, consistency, and user experience. Navigation is simple and intuitive, and each project is clearly presented with relevant details and quick access to the live demo or source code. Its purpose is to provide a clear and honest view of how I work and the attention I give to both visual design and implementation.`,
         frontend: [
+            { label: "Next.js", Icon: RiNextjsFill, highlight: true },
             { label: "React", Icon: RiReactjsLine, highlight: true },
             { label: "TypeScript", Icon: SiTypescript, highlight: true },
+            { label: "Tailwind CSS", Icon: RiTailwindCssFill },
         ],
-        backend: [
-            { label: "Node.js", Icon: SiNodedotjs },
-            { label: "MongoDB", Icon: SiMongodb },
-        ],
-        image: cvaldavImage,
+        backend: [],
+        image: myPortofolioImage,
         imageAlt:
-            "Previzualizare Harbor Ping — listă de endpoint-uri și status",
+            "Previzualizare Matei.work — design modern, navigare intuitivă și proiectele prezentate clar",
     },
 ];
 

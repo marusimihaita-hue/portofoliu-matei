@@ -1,7 +1,7 @@
 import Image from "next/image";
 import avatar from "@/assets/images/avatar.png";
 import Link from "next/link";
-import { ArrowBigLeftDash } from "lucide-react";
+import { ArrowBigLeftDash, ArrowLeft } from "lucide-react";
 
 export const HeaderProject = () => {
     return (
@@ -35,13 +35,13 @@ export const HeaderProject = () => {
                                 href="/"
                                 className=" inline-block text-sm font-medium text-brand hover:underline"
                             >
-                                <ArrowBigLeftDash
+                                <ArrowLeft
                                     size={28}
                                     className="text-brand md:hidden"
                                     aria-hidden
                                 />
-                                <span className="hidden text-[13px] font-normal tracking-wide md:inline">
-                                    ← Back to Portfolio
+                                <span className="hidden text-[13px] font-semibold tracking-wide md:inline">
+                                    ← Back
                                 </span>
                             </Link>
                         </ul>

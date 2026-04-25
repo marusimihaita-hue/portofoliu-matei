@@ -48,7 +48,7 @@ export default function ProjectBySlugPage({ params }: Props) {
                     <FadeInOnView>
                         <div className="mt-10">
                             <h1 className="font-display  text-2xl font-bold tracking-wide">
-                                Tehnologii utilizate
+                                Technologies I used
                             </h1>
                             <div className="flex">
                                 <div>
