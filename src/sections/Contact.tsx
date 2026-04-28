@@ -31,9 +31,12 @@ export const Contact = () => {
                             full-time.
                         </p>
                         <div className="mt-2 flex flex-wrap gap-3">
-                            <button className="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-display text-[13px] font-semibold text-white transition hover:-translate-y-px hover:bg-[#5aa0f0] cursor-default">
+                            <a
+                                href="mailto:marusimihaita@gmail.com"
+                                className="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-display text-[13px] font-semibold text-white transition hover:-translate-y-px hover:bg-[#5aa0f0]"
+                            >
                                 Send an email
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </FadeInOnView>
@@ -51,7 +54,7 @@ export const Contact = () => {
                                 ✉
                             </span>
                             <span className="break-all">
-                                marusimihata@gmail.com
+                                marusimihaita@gmail.com
                             </span>
                         </button>
                         <div className="flex items-center gap-2.5 text-sm text-white/60">

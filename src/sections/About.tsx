@@ -4,6 +4,9 @@ import { RiNextjsFill, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { SiFirebase, SiSanity, SiTypescript } from "react-icons/si";
 import { IconType } from "react-icons";
 import { FadeInOnView } from "@/components/FadeInOnView";
+import { SiPrisma } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
+import { FaStripe } from "react-icons/fa6";
 
 const chipBase =
     "inline-flex items-center gap-1.5 rounded-lg border border-white/[0.09] bg-white/[0.04] px-3 py-1.5 text-[13px] text-off-white transition hover:border-[rgba(74,144,226,0.4)] hover:bg-brand-dim hover:text-brand-pill";
@@ -19,7 +22,9 @@ const frontendStack: StackItem[] = [
 
 const backendStack: StackItem[] = [
     { label: "Sanity", Icon: SiSanity },
-    { label: "Firebase", Icon: SiFirebase },
+    { label: "Prisma", Icon: SiPrisma },
+    { label: "MySQL", Icon: SiMysql },
+    { label: "Stripe", Icon: FaStripe },
 ];
 
 function StackChips({ items }: { items: StackItem[] }) {

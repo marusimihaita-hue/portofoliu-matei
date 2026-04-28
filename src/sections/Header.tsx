@@ -4,10 +4,10 @@ import { Briefcase, User, Mail } from "lucide-react";
 
 export const Header = () => {
     return (
-        <header className="fixed inset-x-0 top-0 z-50 h-16 border-b border-white/[0.06] bg-[rgba(10,10,12,0.72)] backdrop-blur-[16px] py-5">
+        <header className="fixed inset-x-0 top-0 z-50 h-18 border-b border-white/[0.06] bg-[rgba(10,10,12,0.72)] backdrop-blur-[16px] py-5">
             <div className="w-full px-8">
-                <div className="mx-auto flex h-full w-full max-w-7xl items-center">
-                    <nav className="flex w-full items-center justify-between gap-3">
+                <div className="mx-auto flex h-full w-full max-w-7xl items-center ">
+                    <nav className="flex w-full items-center justify-between gap-3 ">
                         <a
                             href="#hero"
                             className="flex min-w-0 items-center gap-2.5"
@@ -15,9 +15,9 @@ export const Header = () => {
                             <Image
                                 src={avatar}
                                 alt="Marusi Matei"
-                                width={40}
-                                height={40}
-                                className="size-[40px] sm:size-[35px] shrink-0 rounded-full object-cover"
+                                width={46}
+                                height={46}
+                                className="size-[32px] sm:size-[36px] md:size-[50px] shrink-0 rounded-full object-cover"
                             />
                             <div className="min-w-0">
                                 <p className="font-display text-sm sm:text-xs font-semibold tracking-wide text-white">
