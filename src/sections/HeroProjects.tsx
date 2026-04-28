@@ -14,7 +14,7 @@ export const HeroProjects = ({
     return (
         <div className="w-full max-w-7xl mx-auto ">
             <div>
-                <h1 className="mt-2 font-display w-[50%] text-6xl sm:text-4xl font-extrabold tracking-tighter text-white/80">
+                <h1 className="mt-2 font-display w-[50%] text-3xl sm:text-4xl font-extrabold tracking-tighter text-white/80">
                     {title}
                 </h1>
                 <p className="mt-4 text-base sm:text-[0.9rem] font-light leading-relaxed text-white/70">

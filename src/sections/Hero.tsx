@@ -23,7 +23,7 @@ export const HeroSection = () => {
         >
             <FadeInOnView>
                 <StarFall>
-                    <div className="relative flex h-[600px] md:h-[800px] lg:h-[700px] flex-1 flex-col items-center justify-end bg-[var(--bg-dark)] pt-24">
+                    <div className="relative flex h-[620px] md:h-[740px] lg:h-[625px]  flex-1 flex-col items-center justify-end bg-[var(--bg-dark)] pt-24">
                         <div className="relative z-10 flex flex-col items-center translate-y-5">
                             <Image
                                 src={avatar}
@@ -31,21 +31,21 @@ export const HeroSection = () => {
                                 width={300}
                                 height={300}
                                 priority
-                                className="z-10 size-72 sm:size-44 rounded-full shadow-[0_20px_50px_rgba(255,_255,_255,_0.4)]"
+                                className="z-10 size-48 md:size-64 rounded-full shadow-[0_20px_50px_rgba(255,_255,_255,_0.4)]"
                             />
                         </div>
                     </div>
                 </StarFall>
             </FadeInOnView>
             <FadeInOnView>
-                <div className="relative flex shrink-0 flex-col items-center gap-8 overflow-hidden bg-[var(--bg-dark)] px-4 pb-16 pt-10 md:gap-10 md:pb-20 md:pt-16">
+                <div className="relative flex shrink-0 flex-col items-center gap-8 overflow-hidden bg-[var(--bg-dark)] px-4 pb-16 pt-10 md:gap-10 md:pb-20 md:pt-10">
                     <div className="pointer-events-none absolute inset-x-0 top-0 h-[clamp(16rem, 38dvh, 30rem)] max-w-none bg-top bg-no-repeat" />
 
                     <div className="relative z-10 flex max-w-xl flex-col items-center gap-4 text-center">
-                        <h1 className="font-display text-5xl sm:text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-white">
+                        <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-[1.05] tracking-[-0.02em] text-white">
                             Marusi Matei Bruno
                         </h1>
-                        <p className="max-w-[420px] text-[1.1rem] sm:text-[0.9rem] font-light italic text-white/45">
+                        <p className="max-w-[420px] text-[0.9rem] md:text-[1.1rem] font-light italic text-white/45">
                             I craft digital products for those who expect more
                             than average.
                         </p>
@@ -53,7 +53,7 @@ export const HeroSection = () => {
 
                     <a
                         href="#projects"
-                        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-[11px] sm:text-[9px] uppercase tracking-[0.15em] text-white/45"
+                        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-[9px] md:text-[11px] uppercase tracking-[0.15em] text-white/45"
                     >
                         <span className="h-10 w-px bg-gradient-to-b from-brand/60 to-transparent" />
                         scroll
