@@ -2,6 +2,7 @@ import Image from "next/image";
 import avatar from "@/assets/images/avatar.png";
 import Link from "next/link";
 import { ArrowBigLeftDash, ArrowLeft } from "lucide-react";
+import { ArrowUUpLeftIcon } from "@phosphor-icons/react/dist/ssr";
 
 export const HeaderProject = () => {
     return (
@@ -33,15 +34,15 @@ export const HeaderProject = () => {
                         <ul className="flex shrink-0 list-none gap-8 items-center justify-center">
                             <Link
                                 href="/"
-                                className=" inline-block text-sm font-medium text-brand hover:underline"
+                                className=" inline-block text-sm font-medium text-white hover:underline"
                             >
-                                <ArrowLeft
+                                <ArrowUUpLeftIcon
                                     size={28}
-                                    className="text-brand md:hidden"
+                                    className="text-white md:hidden"
                                     aria-hidden
                                 />
                                 <span className="hidden text-[13px] font-semibold tracking-wide md:inline">
-                                    ← Back
+                                    <p> ← Back</p>
                                 </span>
                             </Link>
                         </ul>

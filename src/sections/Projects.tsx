@@ -48,15 +48,15 @@ function ProjectSlide({ project, index }: { project: Project; index: number }) {
     const n = String(index + 1).padStart(2, "0");
 
     return (
-        <Card className="group w-full max-w-none overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-8 shadow-none transition-colors duration-300 hover:border-[rgba(74,144,226,0.25)] md:p-10">
+        <Card className="group w-full max-w-none overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-none transition-colors duration-300 hover:border-[rgba(74,144,226,0.25)] md:p-10">
             <div className="pointer-events-none absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-brand to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            <div className="grid w-full items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">
+            <div className="grid w-full items-center gap-10 md:grid-cols-2 lg:gap-12 xl:gap-14">
                 <div className="flex min-w-0 flex-col">
                     <p className="font-display text-[11px] font-semibold uppercase tracking-[0.2em] text-brand">
                         Project {n}
                     </p>
 
-                    <h3 className="mt-3 font-display text-[1.9rem] font-bold leading-tight tracking-tight text-white">
+                    <h3 className="mt-3 font-display text-[28px] md:text-[32px] font-bold leading-tight tracking-tight text-white">
                         {project.title}
                     </h3>
                     <p className="mt-4 max-w-xl text-sm font-light leading-relaxed text-white/45 md:text-[15px]">
@@ -76,7 +76,7 @@ function ProjectSlide({ project, index }: { project: Project; index: number }) {
                         <ArrowRight className="size-3.5" aria-hidden />
                     </Link>
                 </div>
-                <div className="relative mx-auto aspect-[1/1] w-full max-w-xl overflow-hidden rounded-[10px] border border-white/[0.07] bg-white/[0.02] lg:mx-0 lg:max-w-none">
+                <div className="relative mx-auto aspect-[1.5/1] md:aspect-[1/1.2] lg:aspect-[1.2/1] w-full max-w-xl overflow-hidden rounded-[10px] border border-white/[0.07] bg-white/[0.02] lg:mx-0 lg:max-w-none">
                     <span
                         className="pointer-events-none absolute -right-1 top-0 select-none font-display text-[clamp(4rem,14vw,10rem)] font-bold leading-none text-blue-300/20"
                         aria-hidden
@@ -88,7 +88,7 @@ function ProjectSlide({ project, index }: { project: Project; index: number }) {
                             src={project.image}
                             alt={project.imageAlt}
                             fill
-                            className="object-contain object-center p-2 drop-shadow-2xl"
+                            className="object-contain object-center  drop-shadow-2xl"
                             sizes="(max-width: 1024px) 100vw, 42vw"
                             priority={index === 0}
                         />
@@ -138,11 +138,11 @@ export const ProjectsSection = () => {
                         <FadeInOnView>
                             <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
                                 <div className="min-w-0 space-y-4">
-                                    <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-brand">
+                                    <p className="text-[9px] md:text-[11px] lg:text-[14px] font-medium uppercase tracking-[0.2em] text-brand">
                                         Selected Projects
                                     </p>
                                     <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:block lg:space-y-4">
-                                        <h2 className="font-display text-[clamp(1.9rem,4vw,2.8rem)] font-bold leading-tight tracking-tight text-white">
+                                        <h2 className="font-display text-[26px] md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
                                             What I built
                                         </h2>
                                         <div className="flex items-center justify-between gap-4 sm:justify-start lg:hidden">

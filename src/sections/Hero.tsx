@@ -23,7 +23,7 @@ export const HeroSection = () => {
         >
             <FadeInOnView>
                 <StarFall>
-                    <div className="relative flex h-[620px] md:h-[740px] lg:h-[625px]  flex-1 flex-col items-center justify-end bg-[var(--bg-dark)] pt-24">
+                    <div className="relative flex h-[500px] md:h-[740px] lg:h-[625px]  flex-1 flex-col items-center justify-end bg-[var(--bg-dark)] pt-24">
                         <div className="relative z-10 flex flex-col items-center translate-y-5">
                             <Image
                                 src={avatar}
